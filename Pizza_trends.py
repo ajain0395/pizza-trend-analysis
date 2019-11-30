@@ -19,15 +19,11 @@ import os
 import time
 
 #import MapParseFinal as map
-import MapParseFinal as mapparser
-
 flag = True
 #import threading
 lata = []
 longa = []
 bus_name = []
-
-
 
 radius = 10
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -44,8 +40,7 @@ mapbox_access_token = 'pk.eyJ1IjoiYWphaW4wMzk1IiwiYSI6ImNqeDczMWNkczAwcngzeHAzaD
 #    '5d1ea79569ed194d432e56108a04d188/raw/' +
 #    'a9f9e8076b837d541398e999dcbac2b2826a81f8/'+
 #    'gdp-life-exp-2007.csv')
-stops = pd.read_csv("./stops.csv")     
-pizza_data = pd.read_csv("/home/ashish/repos/pizza-trend-analysis/Datafiniti_Pizza_Restaurants_and_the_Pizza_They_Sell_May19.csv")                 
+pizza_data = pd.read_csv("./data/Datafiniti_Pizza_Restaurants_and_the_Pizza_They_Sell_May19.csv")                 
 #      stream = stream_bus,
 
 #stream_bus = go.Stream(
@@ -60,12 +55,22 @@ pizza_data = pd.read_csv("/home/ashish/repos/pizza-trend-analysis/Datafiniti_Piz
 #                            marker=go.scattermapbox.Marker(size=9),
 #                            text=[])
 
-stops.stop_lat = stops.stop_lat.astype(float)
-stops.stop_lon = stops.stop_lon.astype(float)
 pizza_data.latitude = pizza_data.latitude.astype(float)
 pizza_data.longitude = pizza_data.longitude.astype(float)
-app.layout = html.Div([
-        html.Div([dcc.Graph(
+app.layout = html.Div(children=[
+        
+        dcc.Markdown('''
+# **Interactive Data Analysis**
+'''),
+        
+        dcc.Markdown('''
+        ------
+        ###### **Restaurants at different locations in USA**
+        ------
+    '''),
+        html.Div([
+                 
+                dcc.Graph(
         id='dtc_stops',
         figure={
          'data' : [
@@ -98,7 +103,13 @@ app.layout = html.Div([
 #                    zoom=2
 #                ),)
         }
-    )],style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
+    )],style={'width': '100%', 'display': 'inline-block', 'padding': '0 20'}),
+dcc.Markdown('''
+        ------
+        ###### **Heatmap of Demand of Restaurants**
+        ------
+
+    '''),
             html.Div([dcc.Graph(
         id='heat_map',
         figure={
@@ -119,6 +130,7 @@ app.layout = html.Div([
 #        'data':[go.Densitymapbox(pizza_data,lat='latitude', lon='longitude',hovertext='name', radius=radius)],
 #                open-street-map, white-bg, carto-positron, carto-darkmatter, stamen-terrain, stamen-toner, stamen-watercolor
                 'layout':go.Layout(
+                        title=go.layout.Title(text='Dash Data Visualization'),
                         autosize=True,
                         mapbox_style= 'stamen-terrain',
                         mapbox_center_lon=np.mean(pizza_data.longitude),
@@ -126,7 +138,7 @@ app.layout = html.Div([
                         margin={"r":0,"t":0,"l":0,"b":0})
                 }
         )
-        ],style={'width': '49%', 'display': 'inline-block', 'padding': '0 20'}),
+        ],style={'width': '100%', 'display': 'inline-block', 'padding': '0 20'}),
 ],style={'width': '100%','height':'100%'})
 
 if __name__ == '__main__':
@@ -134,4 +146,4 @@ if __name__ == '__main__':
 #    fig.update_layout(mapbox_style="dark")
 #    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 #    fig.show()
-    app.run_server(debug=True,port=8006)
+    app.run_server(debug=True,port=8007)
