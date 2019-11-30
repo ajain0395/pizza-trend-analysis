@@ -6,7 +6,7 @@ Finding interesting association rules between sales of different pizzas.
 ### 2. Classification<br/> 
 It is done between two classes i.e. Veg and Non-Veg based on the nutrients present in them.
 ### 3. Regression<br/> 
-Predicting calories by nutrients present in a particular pizza.
+Estimating calories by nutrients present in a particular pizza.
 # Step to Reproduce
 ## 1. Interactive Plots (Dashboard)
 ### Installation
@@ -15,5 +15,10 @@ Predicting calories by nutrients present in a particular pizza.
 ### Execution
    1. python Pizza_trends.py<br/>
    2. Open browser and type url "localhost:4253"
-## 2. Script Running for 
-
+# Script Running
+   Open Python jupyter-notebook
+## 1. For Classification
+   a. Nutrition_Analysis_Classification.ipynb
+## 2. For Regression
+   a. Nutrition_Analysis_Regression.ipynb
+## 3. 
