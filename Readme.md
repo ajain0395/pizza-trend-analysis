@@ -21,4 +21,5 @@ Estimating calories by nutrients present in a particular pizza.
    a. Nutrition_Analysis_Classification.ipynb
 ## 2. For Regression
    a. Nutrition_Analysis_Regression.ipynb
-## 3. 
+## 3. Association Rules
+   a. Pizza.ipynb
