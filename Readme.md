@@ -1,5 +1,5 @@
 # Pizza trend analysis
-The problem is to identify the trends of various Pizza Restaurants and their products across geographies and 
+The problem is to identify the trends of various Pizza Restaurants and their products orders across geographies and analyzing the contents of different pizza's for different nutrients present in them.
 # Methods Used
 ### 1. Association Pattern Mining 
 Finding interesting association rules between sales of different pizzas.
