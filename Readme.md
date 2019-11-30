@@ -16,7 +16,7 @@ Estimating calories by nutrients present in a particular pizza.
    1. python Pizza_trends.py
    2. Open browser and type url "localhost:4253"
 # Script Running
-   Open Python jupyter-notebook in pizza-trend-anlysis directory
+   Open Python jupyter-notebook in pizza-trend-anlaysis directory
 ## 1. For Classification 
    a. Nutrition_Analysis_Classification.ipynb
 ## 2. For Regression
