@@ -139,6 +139,10 @@ dcc.Markdown('''
                 }
         )
         ],style={'width': '100%', 'display': 'inline-block', 'padding': '0 20'}),
+dcc.Markdown('''
+        **Darker the region indicates higher demand**
+
+    ''')
 ],style={'width': '100%','height':'100%'})
 
 if __name__ == '__main__':
@@ -146,4 +150,4 @@ if __name__ == '__main__':
 #    fig.update_layout(mapbox_style="dark")
 #    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 #    fig.show()
-    app.run_server(debug=True,port=8007)
+    app.run_server(debug=True,port=4253)
